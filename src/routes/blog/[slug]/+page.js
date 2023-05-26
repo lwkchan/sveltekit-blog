@@ -8,16 +8,11 @@ export async function load({ params }) {
 	/** @type any */
 	let match = {};
 	for (const [path, resolver] of Object.entries(modules)) {
-		console.log(`🚀 ~ file: +page.js:13 ~ load ~ resolver:`, resolver);
-		console.log(`🚀 ~ file: +page.js:13 ~ load ~ path:`, path);
 		if (slugFromPath(path) === params.slug) {
 			match = { path, resolver };
-			console.log(`🚀 ~ file: +page.js:17 ~ load ~ match:`, match);
 			break;
 		}
 	}
-
-	console.log(`🚀 ~ file: +page.js:20 ~ load ~ match:`, match);
 	const post = await match.resolver();
 
 	if (!post) {

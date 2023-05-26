@@ -7,4 +7,6 @@
 <h1>{data}</h1>
 <div>{@html JSON.stringify(data)}</div>
 
-<svelte:component this={component} />
+<div class="prose">
+	<svelte:component this={component} />
+</div>
