@@ -1,7 +1,5 @@
 import { error } from '@sveltejs/kit';
-
-const slugFromPath = (/** @type {string} */ path) =>
-	path.match(/([\w-]+)\.(svelte\.md|md|svx)/i)?.[1] ?? null;
+import { slugFromPath } from '$lib/utils';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }) {
