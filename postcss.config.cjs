@@ -1,11 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const autoprefixer = require('autoprefixer');
-
-const config = {
+module.exports = {
 	plugins: [
-		//But others, like autoprefixer, need to run after,
-		autoprefixer
+		require('postcss-import'),
+		require('postcss-preset-env')({
+			stage: 1,
+			features: {
+				'custom-properties': {
+					preserve: true
+				}
+			}
+		}),
+		require('cssnano')({
+			autoprefixer: false
+		})
 	]
 };
-
-module.exports = config;

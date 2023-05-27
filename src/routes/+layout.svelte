@@ -1,21 +1,55 @@
 <script>
-	import '../app.postcss';
+	import '$lib/styles/app.css';
+
+	import { themeStore } from '$lib/themeStore';
+
+	const theme = themeStore();
+
+	const changeTheme = () => {
+		theme.update((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+	};
+
+	theme.subscribe((theme) => {
+		if (typeof window !== 'undefined') {
+			document.body.setAttribute('data-theme', theme);
+		}
+	});
 </script>
 
-<header class="container max-width-l">
-	<nav
-		class="nav-inline padding-vertical-l display-flex justify-content-space-between"
-		aria-label="primary"
-	>
-		<div>
-			<a href="/"
-				><p class="font-size-xl no-margin"><strong>Laura Chan</strong></p>
-				<p class="no-margin">Front-end Engineer</p></a
-			>
-		</div>
-		<ul class="display-flex flex-justify-center"><li><a href="/blog/">Blog</a></li></ul>
+<header class="container max-width-l display-flex flex-justify-center">
+	<nav class="padding-vertical-l display-flex flex-justify-center" aria-label="primary">
+		<a href="/">
+			<p class="font-size-xl no-margin">
+				<strong>Laura Chan</strong>
+			</p>
+			<!-- <p class="no-margin">Front-end Engineer</p> -->
+		</a>
+		<a class="margin-left-l" href="/blog/">Blog</a>
 	</nav>
+	<button
+		on:click={changeTheme}
+		type="button"
+		class="button button-square button-icon display-block"
+	>
+		<i class="ri-sun-fill" />
+	</button>
 </header>
 <main class="container max-width-l padding-bottom-xl">
 	<slot />
 </main>
+
+<style>
+	:global(body[data-theme='dark']) {
+		--color: var(--white);
+		--background: var(--dark);
+		--body-background: var(--dark);
+		--body-color: var(--white);
+
+		--button-hover-background: var(--white);
+		--button-hover-border-color: var(--white);
+		--button-hover-box-shadow: var(--white);
+		--button-active-background: var(--white);
+		--button-active-border-color: var(--white);
+		--button-active-box-shadow: var(--white);
+	}
+</style>
