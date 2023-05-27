@@ -1,18 +1,21 @@
 <script>
-	// Your selected Skeleton theme:
-	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
-
-	// This contains the bulk of Skeletons required styles:
-	// NOTE: this will be renamed skeleton.css in the v2.x release.
-	import '@skeletonlabs/skeleton/styles/skeleton.css';
-
-	// Finally, your application's global stylesheet (sometimes labeled 'app.css')
 	import '../app.postcss';
 </script>
 
-<nav>
-	<a href="/">home</a>
-	<a href="/blog">blog</a>
-</nav>
-
-<slot />
+<header class="container max-width-l">
+	<nav
+		class="nav-inline padding-vertical-l display-flex justify-content-space-between"
+		aria-label="primary"
+	>
+		<div>
+			<a href="/"
+				><p class="font-size-xl no-margin"><strong>Laura Chan</strong></p>
+				<p class="no-margin">Front-end Engineer</p></a
+			>
+		</div>
+		<ul class="display-flex flex-justify-center"><li><a href="/blog/">Blog</a></li></ul>
+	</nav>
+</header>
+<main class="container max-width-l padding-bottom-xl">
+	<slot />
+</main>
