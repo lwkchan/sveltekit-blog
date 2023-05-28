@@ -12,3 +12,5 @@
 @import './_typography';
 @import './_form';
 @import './_element';
+
+@import './_pandaSyntax'
