@@ -8,12 +8,6 @@
 	const changeTheme = () => {
 		theme.update((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
 	};
-
-	theme.subscribe((theme) => {
-		if (typeof window !== 'undefined') {
-			document.body.setAttribute('data-theme', theme);
-		}
-	});
 </script>
 
 <header class="container max-width-l display-flex flex-justify-center">
@@ -22,7 +16,7 @@
 			<p class="font-size-xl no-margin">
 				<strong>Laura Chan</strong>
 			</p>
-			<!-- <p class="no-margin">Front-end Engineer</p> -->
+			<p class="no-margin">Front-end Engineer</p>
 		</a>
 		<a class="margin-left-l" href="/blog/">Blog</a>
 	</nav>
@@ -30,6 +24,8 @@
 		on:click={changeTheme}
 		type="button"
 		class="button button-square button-icon display-block"
+		class:button-black={$theme === 'light'}
+		class:button-border={$theme === 'light'}
 	>
 		<i class="ri-sun-fill" />
 	</button>

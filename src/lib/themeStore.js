@@ -12,5 +12,12 @@ export const themeStore = () => {
 			store.update(() => 'dark');
 		}
 	});
+
+	store.subscribe((theme) => {
+		if (typeof window !== 'undefined') {
+			document.body.setAttribute('data-theme', theme);
+		}
+	});
+
 	return store;
 };
