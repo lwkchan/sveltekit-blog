@@ -47,5 +47,7 @@
 		--button-active-background: var(--white);
 		--button-active-border-color: var(--white);
 		--button-active-box-shadow: var(--white);
+
+		--code-color: var(--primary-100);
 	}
 </style>
