@@ -10,6 +10,9 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Laura Chan | Blog</title>
+</svelte:head>
 <h1>Blog</h1>
 
 <ul>

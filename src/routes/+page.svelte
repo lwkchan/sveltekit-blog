@@ -1,3 +1,6 @@
+<svelte:head>
+	<title>Laura Chan</title>
+</svelte:head>
 <h1>👋 Welcome</h1>
 <div class="content">
 	<p class="font-size-xl">

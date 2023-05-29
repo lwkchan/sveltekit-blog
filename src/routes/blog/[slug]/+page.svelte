@@ -12,6 +12,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Laura Chan | {data.frontmatter.title}</title>
+</svelte:head>
+
 <h1>{data.frontmatter.title}</h1>
 <p>
 	<small>
