@@ -156,11 +156,9 @@ Then, when a component in our application requires lazyLoading, we import the fu
     height: 500px;
   }
 </style>
-{% raw %}
 <main>
   {#each imageSrcs as src, i}
     <img use:lazyLoad={src} alt="kitten number{i}" />
   {/each}
 </main>
-{% endraw %}
 ```

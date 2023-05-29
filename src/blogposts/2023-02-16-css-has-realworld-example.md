@@ -17,7 +17,6 @@ Without the habit of using `:has`, my initial response was to use JavaScript of 
 import { useState, createContext, useContext, useEffect } from "react";
 
 const TableWidthContext = createContext();
-{% raw %}
 function Layout({ children }) {
   const [numberOfCols, setNumberOfCols] = useState(undefined);
   const style =
@@ -56,7 +55,6 @@ export default function App() {
     </Layout>
   );
 }
-{% endraw %}
 ```
 
 But I felt above would be hard to maintain and extend. There was something about the fact that you need to jump between context and layout to understand that there was a large overall style change going on if the table had a certain number of tables. I wasn't too happy with this approach and decided to shelve it.
