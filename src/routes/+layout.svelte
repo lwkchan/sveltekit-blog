@@ -23,11 +23,12 @@
 	<button
 		on:click={changeTheme}
 		type="button"
+		aria-label="Toggle"
 		class="button button-square button-icon display-block"
 		class:button-black={$theme === 'light'}
 		class:button-border={$theme === 'light'}
 	>
-		<i class="ri-sun-fill" />
+		<i aria-hidden class="ri-sun-fill" />
 	</button>
 </header>
 <main class="container max-width-l padding-bottom-xl">
@@ -36,6 +37,8 @@
 
 <style>
 	:global(body[data-theme='dark']) {
+		--white: var(--light-100);
+
 		--color: var(--white);
 		--background: var(--dark);
 		--body-background: var(--dark);
