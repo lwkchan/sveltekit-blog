@@ -1,12 +1,18 @@
 <script>
+	import { enhance } from '$app/forms';
 	import '$lib/styles/app.css';
 
-	import { themeStore } from '$lib/themeStore';
+	let theme =
+		(typeof window === 'undefined' ? 'light' : document.body.getAttribute('data-theme')) || 'light';
 
-	const theme = themeStore();
+	/** @type {import('./$types').SubmitFunction} */
+	const submitUpdateTheme = ({ action }) => {
+		const themeParam = action.searchParams.get('theme');
 
-	const changeTheme = () => {
-		theme.update((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+		if (themeParam) {
+			theme = themeParam;
+			document.body.setAttribute('data-theme', themeParam);
+		}
 	};
 </script>
 
@@ -20,16 +26,27 @@
 		</a>
 		<a class="margin-left-l" data-sveltekit-preload-code="viewport" href="/blog/">Blog</a>
 	</nav>
-	<button
-		on:click={changeTheme}
-		type="button"
-		aria-label="Toggle"
-		class="button button-square button-icon display-block"
-		class:button-black={$theme === 'light'}
-		class:button-border={$theme === 'light'}
-	>
-		<i aria-hidden class="ri-sun-fill" />
-	</button>
+	<form method="POST" use:enhance={submitUpdateTheme}>
+		<!-- When dark -->
+		<button
+			formaction="/?/setTheme&theme=light"
+			aria-label="Toggle theme"
+			id="light-button"
+			class="button button-square button-icon display-block"
+		>
+			<i aria-hidden class="ri-sun-fill" />
+		</button>
+
+		<!-- When light -->
+		<button
+			formaction="/?/setTheme&theme=dark"
+			aria-label="Toggle theme"
+			class="button button-square button-icon display-block button-black button-border"
+			id="dark-button"
+		>
+			<i class="ri-moon-fill" />
+		</button>
+	</form>
 </header>
 <main class="container max-width-l padding-bottom-xl">
 	<slot />
@@ -52,5 +69,12 @@
 		--button-active-box-shadow: var(--white);
 
 		--code-color: var(--primary-100);
+	}
+
+	:global(body[data-theme='dark'] #dark-button) {
+		display: none;
+	}
+	:global(body[data-theme='light'] #light-button, body[data-theme=''] #light-button) {
+		display: none;
 	}
 </style>
