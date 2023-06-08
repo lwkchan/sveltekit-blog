@@ -18,7 +18,7 @@
 			</p>
 			<p class="no-margin">Front-end Engineer</p>
 		</a>
-		<a class="margin-left-l" href="/blog/">Blog</a>
+		<a class="margin-left-l" data-sveltekit-preload-code="viewport" href="/blog/">Blog</a>
 	</nav>
 	<button
 		on:click={changeTheme}
