@@ -1,20 +1,14 @@
 ---
-date: 2023-05-30
+date: 2023-07-06
 title: 'What I like about Design Systems Engineering'
 ---
 
-I have been working almost exclusively on [Oyster](oysterhr.com)'s Design System for a little over a year now. When I first joined the team, I only ever had indirect experience with design systems. Either, I was implementing components as part of a feature. Or, I was informally building a design system - whereby I would make reusable components and push back on design when their new designs didn't really make sense with previous designs.
+I have been working almost exclusively on [Oyster](oysterhr.com)'s Design System for a over a year now. When I first joined the team, I only ever had indirect experience with design systems. Either, I was implementing components as part of a feature. Or, I was informally building a UI library - whereby I would make reusable components and push back on design when their new designs didn't really make sense with previous designs.
 
-I wanted to work exclusively on design systems because I really enjoyed working closely with designers and figuring out how to map design language into code. This is still true. But I've also learned more about the systems-side of design. For example, how it is not always so simple to introduce a new concept to the existing design language. Or how documentation is just as important for designers as it is for developers.
+Last year, I chose to work on design systems because I really enjoyed working closely with designers and figuring out how to map design language into code. Today, this is still true. But I've also learned more about the systems-side of design. For example, how difficult it can be to introduce a new concept to the existing design language. Or how documentation is just as important for designers as it is for developers.
 
 Besides working with designers, I've also really enjoyed working with the wide range of engineers at Oyster. I've always been interested in how communication influences people's ways of thinking and working. I think this is something I picked up when I studied literature at university, or when [I worked in PR](https://www.lwkchan.com/blog/2020-05-08-everything-is-documentation-making-commits-prs-meaningful). I enjoy seeing how people use our APIs (or even how they break them) and how they navigate our documentation (or even if they do at all).
 
-Nonetheless, I was sometimes overwhelmed by the amount of support requests, especially at the beginning; the Design System Team had just started and the notion of a Design System was unclear to the company. Then, when we had a few components, there were loads of questions and bug reports on specific uses of components. The largest thing I noticed was that, whereas before customer support requests were being fielded through customer support or even product managers, now engineers and designers were coming directly to us. On top of this, we were still figuring out the kind of API we wanted to build, how to document our components efficiently and also what kind of workflow we wanted to have as a team
+There is a careful balance to be struck between encouraging best practices and allowing for flexibility in the componentry. These best practices tend to be: ensuring users build with accessibility in mind, creating consistency with the components' APIs and making sure that developers build according to the guidelines of the design system (i.e. visual consistency). A year ago, I found this difficult to grapple; there are so many possibilities to explore when it comes to API design and you will never get it 100% right. In the moment of receiving feedback on how an API could be better, I would worry that I had got it all wrong. But over time, I've learned to take on feedback with good spirits. Our users aren't so much telling us what's wrong as they are trying to help and support the Design System. Moreover, a single user's feedback is not necessarily shared by every user. The feedback should be considered in the context of the existing APIs, the rest of the engineers and the particular user’s needs at that moment.
 
-Over time, I've found the following to help our design system and my own working style:
-- SLAs on the service requests
-- Have an eye on the ground for conversations on how people use components or how they break them
-- Invite people to be interested in the DS -- allow them to make PRs if they want! Make people feel like they can affect the design system too
-- Experiment with communication styles
-
-I've learned so much about accessibility in the last year than I have ever before.
+I've learned so much about accessibility in the last year than I have ever before. I have loved learning how to use and build tools for screen readers (like router announcers in Single Page Apps), digesting [WCAG](https://www.w3.org/TR/WCAG21/), or learning about the [Web Accessibility Initiative ARIA Patterns](https://www.w3.org/WAI/ARIA/apg/patterns/). Learning more about accessibility has been a goal of mine for a while and, for anyone interested in learning more, I highly recommend learning about it in the context of a Design System.
