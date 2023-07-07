@@ -3,7 +3,7 @@ date: 2023-07-06
 title: 'What I like about Design Systems Engineering'
 ---
 
-I have been working almost exclusively on [Oyster](oysterhr.com)'s Design System for a over a year now. When I first joined the team, I only ever had indirect experience with design systems. Either, I was implementing components as part of a feature. Or, I was informally building a UI library - whereby I would make reusable components and push back on design when their new designs didn't really make sense with previous designs.
+I have been working almost exclusively on [Oyster](https://www.oysterhr.com)'s Design System for a over a year now. When I first joined the team, I only ever had indirect experience with design systems. Either, I was implementing components as part of a feature. Or, I was informally building a UI library - whereby I would make reusable components and push back on design when their new designs didn't really make sense with previous designs.
 
 Last year, I chose to work on design systems because I really enjoyed working closely with designers and figuring out how to map design language into code. Today, this is still true. But I've also learned more about the systems-side of design. For example, how difficult it can be to introduce a new concept to the existing design language. Or how documentation is just as important for designers as it is for developers.
 
