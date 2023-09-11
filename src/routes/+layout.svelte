@@ -16,39 +16,29 @@
 	};
 </script>
 
-<header class="container max-width-l display-flex flex-justify-center">
-	<nav class="padding-vertical-l display-flex flex-justify-center" aria-label="primary">
+<header>
+	<nav aria-label="primary">
 		<a href="/">
-			<p class="font-size-xl no-margin">
+			<p>
 				<strong>Laura Chan</strong>
 			</p>
-			<p class="no-margin">Front-end Engineer</p>
+			<p>Front-end Engineer</p>
 		</a>
-		<a class="margin-left-l" data-sveltekit-preload-code="viewport" href="/blog/">Blog</a>
+		<a data-sveltekit-preload-code="viewport" href="/blog/">Blog</a>
 	</nav>
 	<form method="POST" use:enhance={submitUpdateTheme}>
 		<!-- When dark -->
-		<button
-			formaction="/?/setTheme&theme=light"
-			aria-label="Toggle theme"
-			id="light-button"
-			class="button button-square button-icon display-block"
-		>
-			<i aria-hidden class="ri-sun-fill" />
+		<button formaction="/?/setTheme&theme=light" aria-label="Toggle theme" id="light-button">
+			<i aria-hidden />
 		</button>
 
 		<!-- When light -->
-		<button
-			formaction="/?/setTheme&theme=dark"
-			aria-label="Toggle theme"
-			class="button button-square button-icon display-block button-black button-border"
-			id="dark-button"
-		>
-			<i class="ri-moon-fill" />
+		<button formaction="/?/setTheme&theme=dark" aria-label="Toggle theme" id="dark-button">
+			<i />
 		</button>
 	</form>
 </header>
-<main class="container max-width-l padding-bottom-xl">
+<main>
 	<slot />
 </main>
 

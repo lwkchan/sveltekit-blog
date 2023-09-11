@@ -17,7 +17,7 @@
 
 <ul>
 	{#each data.blogposts as { date, title, slug }}
-		<article class="margin-bottom-m">
+		<article>
 			<h2>
 				<a href={`/blog/${slug}`}>{title}</a>
 			</h2>

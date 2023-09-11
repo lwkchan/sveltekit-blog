@@ -25,6 +25,6 @@
 
 <svelte:component this={component} />
 
-<nav class="margin-top-l">
+<nav>
 	<a href="/blog/">← Blog index</a>
 </nav>
