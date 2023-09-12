@@ -19,7 +19,7 @@
 	{#each data.blogposts as { date, title, slug }}
 		<article>
 			<h2>
-				<a href={`/blog/${slug}`}>{title}</a>
+				<a class="link" href={`/blog/${slug}`}>{title}</a>
 			</h2>
 			<p><time datetime={date}><small>{getLocaleDate(date)}</small></time></p>
 		</article>

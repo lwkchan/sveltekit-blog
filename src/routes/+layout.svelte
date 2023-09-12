@@ -16,55 +16,38 @@
 	};
 </script>
 
-<header>
-	<nav aria-label="primary">
-		<a href="/">
-			<p>
-				<strong>Laura Chan</strong>
-			</p>
-			<p>Front-end Engineer</p>
-		</a>
-		<a data-sveltekit-preload-code="viewport" href="/blog/">Blog</a>
-	</nav>
-	<form method="POST" use:enhance={submitUpdateTheme}>
-		<!-- When dark -->
-		<button formaction="/?/setTheme&theme=light" aria-label="Toggle theme" id="light-button">
-			<i aria-hidden />
-		</button>
+<!-- <svelte:body class="min-h-screen" /> -->
 
-		<!-- When light -->
-		<button formaction="/?/setTheme&theme=dark" aria-label="Toggle theme" id="dark-button">
-			<i />
-		</button>
-	</form>
-</header>
-<main>
-	<slot />
-</main>
+<div class="grid grid-rows-[auto,1fr,auto] min-h-screen p-4 gap-4">
+	<header class="container mx-auto">
+		<nav aria-label="primary">
+			<a href="/">
+				<p>
+					<strong>Laura Chan</strong>
+				</p>
+				<p>Front-end Engineer</p>
+			</a>
+			<a data-sveltekit-preload-code="viewport" href="/blog/">Blog</a>
+		</nav>
+		<form method="POST" use:enhance={submitUpdateTheme}>
+			<!-- When dark -->
+			<button formaction="/?/setTheme&theme=light" aria-label="Toggle theme" id="light-button">
+				<i aria-hidden />
+			</button>
 
-<style>
-	:global(body[data-theme='dark']) {
-		--white: var(--light-100);
-
-		--color: var(--white);
-		--background: var(--dark);
-		--body-background: var(--dark);
-		--body-color: var(--white);
-
-		--button-hover-background: var(--white);
-		--button-hover-border-color: var(--white);
-		--button-hover-box-shadow: var(--white);
-		--button-active-background: var(--white);
-		--button-active-border-color: var(--white);
-		--button-active-box-shadow: var(--white);
-
-		--code-color: var(--primary-100);
-	}
-
-	:global(body[data-theme='dark'] #dark-button) {
-		display: none;
-	}
-	:global(body[data-theme='light'] #light-button, body[data-theme=''] #light-button) {
-		display: none;
-	}
-</style>
+			<!-- When light -->
+			<button formaction="/?/setTheme&theme=dark" aria-label="Toggle theme" id="dark-button">
+				<i />
+			</button>
+		</form>
+	</header>
+	<main class="container my-0 mx-auto">
+		<slot />
+	</main>
+	<footer class="footer items-center p-4 bg-neutral text-neutral-content">
+		<aside class="items-center grid-flow-col">
+			<p>Copyright © 2023 - All right reserved</p>
+		</aside>
+		<nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end" />
+	</footer>
+</div>

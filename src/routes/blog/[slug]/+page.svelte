@@ -16,14 +16,16 @@
 	<title>Laura Chan | {data.frontmatter.title}</title>
 </svelte:head>
 
-<h1>{data.frontmatter.title}</h1>
-<p>
-	<small>
-		<time datetime={data.frontmatter.date}>{getLocaleDate(data.frontmatter.date)}</time>
-	</small>
-</p>
+<div class="prose mx-auto">
+	<h1>{data.frontmatter.title}</h1>
+	<p>
+		<small>
+			<time datetime={data.frontmatter.date}>{getLocaleDate(data.frontmatter.date)}</time>
+		</small>
+	</p>
 
-<svelte:component this={component} />
+	<svelte:component this={component} />
+</div>
 
 <nav>
 	<a href="/blog/">← Blog index</a>
